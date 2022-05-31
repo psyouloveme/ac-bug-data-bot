@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animal Crossing Selector</title>
+    <style type="text/css">
+        /* .panel,
+        body,
+        table {
+            width: 100%;
+            height: 100%;
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="panel" id="panel">
+        <label for="current-ac-game">Current Animal Crossing Game</label>
+        <select name="current-ac-game" id="current-ac-game">
+            <option value="none">None</option>
+            <option value="animal-crossing">Animal Crossing</option>
+            <option value="doubutsu-no-mori-e+">どうぶつの森e+</option>
+        </select>
+    </div>
+    <script>
+        const acVersion = nodecg.Replicant('acGameVersion');
+        NodeCG.waitForReplicants(acVersion).then(() => {
+            // update the selected value
+            document.getElementById("current-ac-game").value = acVersion.value;
+            // bind a replicant change handler
+            acVersion.on('change', (nextVal) => {
+                document.getElementById("current-ac-game").value = nextVal;
+            })
+            // bind a change handler for the dropdown
+            document.getElementById("current-ac-game").addEventListener("change", (event) => {
+                acVersion.value = event.target.value;
+            });
+        })
+    </script>
+</body>
+
+</html>

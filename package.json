@@ -1,0 +1,62 @@
+{
+  "name": "ac-bug-data",
+  "version": "0.0.0",
+  "description": "Lookup Animal Crossing bug data",
+  "homepage": "",
+  "author": {
+    "name": "psyouloveme",
+    "email": "4607641+psyouloveme@users.noreply.github.com",
+    "url": "https://psyoulove.me"
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "private": true,
+  "nodecg": {
+    "compatibleRange": "^1.1.1",
+    "dashboardPanels": [
+      {
+        "name": "ac-version-selector",
+        "title": "Animal Crossing Version Selector",
+        "width": 3,
+        "file": "index.html",
+        "headerColor": "#525F78"
+      }
+    ],
+    "bundleDependencies": {
+      "nodecg-io-sql": "^0.2.0"
+    }
+  },
+  "repository": "https://github.com/nodecg/nodecg.git",
+  "license": "Apache-2.0",
+  "targets": {
+    "acversion": {
+      "source": "./src/dashboard/index.html",
+      "distDir": "./dashboard/",
+      "context": "node",
+      "publicUrl": "./"
+    },
+    "extension": {
+      "source": "./src/extension/index.js",
+      "distDir": "./extension/",
+      "context": "node",
+      "publicUrl": "./"
+    }
+  },
+  "scripts": {
+    "build": "./build.sh"
+  },
+  "devDependencies": {
+    "parcel": "^2.6.0"
+  },
+  "dependencies": {
+    "nodecg-io-core": "^0.2.0"
+  }
+}
