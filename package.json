@@ -51,11 +51,14 @@
     }
   },
   "scripts": {
-    "build": "./build.sh"
+    "build": "rimraf ./dashboard ./extension && npx parcel build --target extension --target acversion",
+    "build-db": "rimraf ./database && mkdir ./database && node ./src/database/createBugDataDb.js",
+    "watch": "npx parcel watch --target extension --target acversion"
   },
   "devDependencies": {
     "parcel": "^2.6.0",
-    "sqlite3": "^5.0.8"
+    "sqlite3": "^5.0.8",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "nodecg-io-core": "^0.2.0"

@@ -1,89 +1,70 @@
 const sqlite3 = require('sqlite3').verbose();
-const {bugData} = require('./bugData');
-const db = new sqlite3.Database('bugData.db');
+const {bugData, bugDataDnMEPlus} = require('./bugData');
+const db = new sqlite3.Database('./database/bugData.db');
 
+// The tables are identical for all versions
+// so predefine the schema
+const tableSchema = `(
+	id INTEGER PRIMARY KEY AUTOINCREMENT
+	, name TEXT
+	, available TEXT
+	, peak TEXT
+	, time TEXT
+	, location TEXT
+	, spawn TEXT
+	, rain INTEGER
+	)`;
+
+// Predefine the insert statement since
+// the schemas are the same
+const insertStmt = `(
+      name, 
+      available, 
+      peak, 
+      time, 
+      location, 
+      spawn, 
+      rain
+    ) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+
+// Map the table names to the data so we can do this in a loop
+const tableDataMapping = {
+	// eslint-disable-next-line quote-props
+	'ac_bug_data': bugData,
+	// eslint-disable-next-line quote-props
+	'dnmeplus_bug_data': bugDataDnMEPlus
+};
+
+// Start the db transaction
 db.serialize(() => {
-	console.log('Creating Animal Crossing bug database.');
+	console.log('Creating bug database.');
 
-	db.run(
-		'CREATE TABLE ac_bug_data (' +
-      'id INTEGER PRIMARY KEY AUTOINCREMENT' +
-      ', name TEXT' +
-      ', available TEXT' +
-      ', peak TEXT' +
-      ', time TEXT' +
-      ', location TEXT' +
-      ', spawn TEXT' +
-      ', rain INTEGER' +
-      ')'
-	);
-
-	const acInsert = db.prepare(
-		`INSERT INTO ac_bug_data (
-      name, 
-      available, 
-      peak, 
-      time, 
-      location, 
-      spawn, 
-      rain
-    ) VALUES (?, ?, ?, ?, ?, ?, ?)`
-	);
-	for (const bd of bugData) {
-		console.log('trying to load data', bd.name);
-		acInsert.run(
-			[bd.name, bd.available, bd.peak, bd.time, bd.location, bd.spawn, bd.rain],
-			err => {
-				if (err) {
-					throw err;
+	for (const [tableName, tableData] of Object.entries(tableDataMapping)) {
+		console.log(`Creating ${tableName} bug table.`);
+		// Create the bug data table
+		db.run(`CREATE TABLE ${tableName} ` + tableSchema);
+		// Create the insert statement
+		const stmt = db.prepare(`INSERT INTO ${tableName} ` + insertStmt);
+		// Insert all the bugs
+		for (const bd of tableData) {
+			console.log('Loading Bug: ', bd.name);
+			// Do the insert
+			stmt.run(
+				[bd.name, bd.available, bd.peak, bd.time, bd.location, bd.spawn, bd.rain],
+				err => {
+					if (err) {
+						// Throw if theres any error
+						throw err;
+					}
 				}
-			}
-		);
+			);
+		}
+
+		// Finalize the create table/inserts
+		stmt.finalize();
+		console.log(`Finished creating ${tableName} bug table.`);
 	}
-
-	acInsert.finalize();
-
-	console.log('Finished creating Animal Crossing bug table database.');
-
-	db.run(
-		'CREATE TABLE dnmeplus_bug_data (' +
-      'id INTEGER PRIMARY KEY AUTOINCREMENT' +
-      ', name TEXT' +
-      ', available TEXT' +
-      ', peak TEXT' +
-      ', time TEXT' +
-      ', location TEXT' +
-      ', spawn TEXT' +
-      ', rain INTEGER' +
-      ')'
-	);
-
-	const dnmeplusInsert = db.prepare(
-		`INSERT INTO dnmeplus_bug_data (
-      name, 
-      available, 
-      peak, 
-      time, 
-      location, 
-      spawn, 
-      rain
-    ) VALUES (?, ?, ?, ?, ?, ?, ?)`
-	);
-	for (const bd of bugData) {
-		console.log('trying to load data', bd.name);
-		dnmeplusInsert.run(
-			[bd.name, bd.available, bd.peak, bd.time, bd.location, bd.spawn, bd.rain],
-			err => {
-				if (err) {
-					throw err;
-				}
-			}
-		);
-	}
-
-	dnmeplusInsert.finalize();
-
-	console.log('Finished creating Doubutsu no Mori e+ bug table database.');
 });
 
+// Done
 db.close();

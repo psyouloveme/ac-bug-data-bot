@@ -16,18 +16,18 @@ function bugCallback(nodecg, bug) {
 			outMsg += ' but not in rain.';
 		}
 
-		nodecg.sendMessage('SendChatMessage', outMsg);
+		nodecg.sendMessageToBundle('SendChatMessage', 'twitch-listener', outMsg);
 	}
 }
 
 exports.setupBugData = function (nodecg, sqlClient) {
-	const bugDataReady = nodecg.Replicant('bugDataReady');
+	const bugDataReady = nodecg.Replicant('databaseReady');
 
 	bugDataReady.value = false;
 
 	nodecg.log.info('Setting up Bug Data service.');
 
-	nodecg.listenFor('ChatReceived', ({user, message}) => {
+	nodecg.listenFor('ChatReceived', 'twitch-listener', ({user, message}) => {
 		if (!user || !message || !message.startsWith('!bug ')) {
 			return;
 		}
@@ -35,6 +35,8 @@ exports.setupBugData = function (nodecg, sqlClient) {
 		const bugName = message.split(' ').slice(1).join(' ').toLowerCase();
 		const gameVersion = nodecg.Replicant('acGameVersion');
 		let tablename = null;
+
+		nodecg.log.info('looking up bug data for', gameVersion.value);
 
 		switch (gameVersion.value) {
 			case 'doubutsu-no-mori-e+':
@@ -50,6 +52,8 @@ exports.setupBugData = function (nodecg, sqlClient) {
 			return;
 		}
 
+		nodecg.log.info('using tablename', tablename);
+
 		sqlClient(tablename)
 			.first(
 				'name',
@@ -64,6 +68,8 @@ exports.setupBugData = function (nodecg, sqlClient) {
 			.then(row => {
 				if (row) {
 					bugCallback(nodecg, row);
+				} else {
+					nodecg.log.info('no bug found,', bugName);
 				}
 			})
 			.catch(err => {
