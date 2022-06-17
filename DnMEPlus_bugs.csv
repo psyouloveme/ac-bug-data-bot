@@ -1,0 +1,432 @@
+{
+    name: 'bee',
+    available: 'All year',
+    peak: 'All year',
+    time: 'All day',
+    location: 'In trees',
+    spawn: '5 per day',
+    rain: 'Yes'
+},
+{
+    name: 'cockroach',
+    available: 'All year',
+    peak: 'All year',
+    time: 'All day',
+    location: 'On trees / On pansies / On cosmos / On spoiled turnips',
+    spawn: '5%',
+    rain: 'Yes (Trees)'
+},
+{
+    name: 'flea',
+    available: 'Feb 24 - Nov 30',
+    peak: 'May - Sep',
+    time: 'All day',
+    location: 'On villagers',
+    spawn: '2%',
+    rain: 'Yes'
+},
+{
+    name: 'snail',
+    available: 'Mar 27 - Sep 30',
+    peak: 'Apr - Sep',
+    time: 'All day (raining)',
+    location: 'On flowers',
+    spawn: '4%',
+    rain: 'Yes'
+},
+{
+    name: 'spider',
+    available: 'Mar 27 - Sep 30',
+    peak: 'Apr - Sep',
+    time: 'All day',
+    location: 'In trees',
+    spawn: '2%',
+    rain: 'Yes'
+},
+{
+    name: 'red dragonfly',
+    available: 'Aug 27 - Oct 31',
+    peak: 'Oct',
+    time: '8 AM - 7 PM',
+    location: 'Flying',
+    spawn: '5%',
+    rain: 'No'
+},
+{
+    name: 'grasshopper',
+    available: 'Jul 27 - Sep 30',
+    peak: 'Sep',
+    time: '8 AM - 5 PM',
+    location: 'In bushes',
+    spawn: '11%',
+    rain: 'No'
+},
+{
+    name: 'long locust',
+    available: 'Jul 27 - Nov 30',
+    peak: 'Sep',
+    time: '8 AM - 7 PM',
+    location: 'In bushes',
+    spawn: '15%',
+    rain: 'No'
+},
+{
+    name: 'migratory locust',
+    available: 'Aug 27 - Nov 30',
+    peak: 'Sep',
+    time: '8 AM - 7 PM',
+    location: 'On the ground',
+    spawn: '15%',
+    rain: 'No'
+},
+{
+    name: 'mantis',
+    available: 'Jul 27 - Oct 31',
+    peak: 'Sep',
+    time: '8 AM - 5 PM',
+    location: 'On pansies / On cosmos',
+    spawn: '10%',
+    rain: 'No'
+},
+{
+    name: 'bagworm',
+    available: 'Sep 26 - Mar 31',
+    peak: 'Oct - Mar',
+    time: 'All day',
+    location: 'In trees',
+    spawn: '2%',
+    rain: 'Yes'
+},
+{
+    name: 'mole cricket',
+    available: 'Oct 27 - May 31',
+    peak: 'Dec - Apr',
+    time: 'All day',
+    location: 'Underground',
+    spawn: '10%',
+    rain: 'Yes'
+},
+{
+    name: 'pill bug',
+    available: 'All year',
+    peak: 'All year',
+    time: 'All day',
+    location: 'Under rocks',
+    spawn: '5%',
+    rain: 'Yes'
+},
+{
+    name: 'evening cicada',
+    available: 'Jun 26 - Aug 31',
+    peak: 'Jul',
+    time: '4 - 8, 16 - 19',
+    location: 'On trees',
+    spawn: '43%',
+    rain: 'Yes'
+},
+{
+    name: 'crab',
+    available: 'All year',
+    peak: 'Apr - Oct',
+    time: 'All day',
+    location: 'Beach',
+    spawn: '4%',
+    rain: 'Yes'
+},
+{
+    name: 'hermit crab',
+    available: 'Feb 24 - Dec 31',
+    peak: 'May - Aug',
+    time: 'All day',
+    location: 'Beach',
+    spawn: '4%',
+    rain: 'Yes'
+},
+{
+    name: 'mosquito',
+    available: 'Apr 26 - Sep 30',
+    peak: 'Jul - Aug',
+    time: '5 PM - 11 PM',
+    location: 'Flying',
+    spawn: '20%',
+    rain: 'Yes'
+},
+{
+    name: 'pond skater',
+    available: 'May 27 - Sep 30',
+    peak: 'Aug',
+    time: '8 AM - 7 PM',
+    location: 'On the lake / On holding ponds',
+    spawn: '8%',
+    rain: 'Yes'
+},
+{
+    name: 'dung beetle',
+    available: 'Feb 24 - Oct 31',
+    peak: 'May - Aug',
+    time: '7 PM - 8 AM',
+    location: 'Rolling a ball on the ground',
+    spawn: '5%',
+    rain: 'Yes'
+},
+{
+    name: 'firefly',
+    available: 'May 27 - Jun 30',
+    peak: 'Jun',
+    time: '7 PM - 4 AM',
+    location: 'Flying near rivers / Flying near holding ponds',
+    spawn: '56%',
+    rain: 'No'
+},
+{
+    name: 'ant',
+    available: 'All year',
+    peak: 'All year',
+    time: 'All day',
+    location: 'On candy / On spoiled turnips',
+    spawn: '100%',
+    rain: 'No'
+},
+{
+    name: 'cricket',
+    available: 'Aug 27 - Nov 30',
+    peak: 'Sep',
+    time: '5 PM - 8 AM',
+    location: 'In bushes',
+    spawn: '30%',
+    rain: 'No'
+},
+{
+    name: 'bell cricket',
+    available: 'Aug 27 - Oct 31',
+    peak: 'Sep',
+    time: '5 PM - 8 AM',
+    location: 'In bushes',
+    spawn: '10%',
+    rain: 'No'
+},
+{
+    name: 'pine cricket',
+    available: 'Aug 27 - Oct 31',
+    peak: 'Sep',
+    time: '5 PM - 8 AM',
+    location: 'In bushes',
+    spawn: '20%',
+    rain: 'No'
+},
+{
+    name: 'diving beetle',
+    available: 'Apr 26 - Sep 30',
+    peak: 'Jun - Jul',
+    time: '8 AM - 5 PM',
+    location: 'On rivers / On the lake / On holding ponds',
+    spawn: '10%',
+    rain: 'Yes'
+},
+{
+    name: 'jewel beetle',
+    available: 'Jun 26 - Aug 31',
+    peak: 'Jul - Aug',
+    time: '8 AM - 4 PM',
+    location: 'On trees',
+    spawn: '2%',
+    rain: 'Yes'
+},
+{
+    name: 'longhorn beetle',
+    available: 'May 27 - Aug 31',
+    peak: 'Jun - Jul',
+    time: '8 AM - 5 PM',
+    location: 'On trees',
+    spawn: '3%',
+    rain: 'Yes'
+},
+{
+    name: 'brown cicada',
+    available: 'Jun 26 - Aug 31',
+    peak: 'Jul',
+    time: '8 AM - 5 PM',
+    location: 'On trees',
+    spawn: '16%',
+    rain: 'Yes'
+},
+{
+    name: 'robust cicada',
+    available: 'Jun 26 - Aug 31',
+    peak: 'Jul',
+    time: '8 AM - 4 PM',
+    location: 'On trees',
+    spawn: '13%',
+    rain: 'Yes'
+},
+{
+    name: 'banded dragonfly',
+    available: 'Jun 26 - Aug 31',
+    peak: 'Jul - Aug',
+    time: '8 AM - 5 PM',
+    location: 'Flying',
+    spawn: '4%',
+    rain: 'No'
+},
+{
+    name: 'common dragonfly',
+    available: 'Apr 26 - Jul 31',
+    peak: 'Jun',
+    time: '8 AM - 5 PM',
+    location: 'Flying',
+    spawn: '5%',
+    rain: 'No'
+},
+{
+    name: 'darner dragonfly',
+    available: 'May 27 - Aug 31',
+    peak: 'Jun',
+    time: '8 AM - 5 PM',
+    location: 'Flying',
+    spawn: '4%',
+    rain: 'No'
+},
+{
+    name: 'common butterfly',
+    available: 'Feb 24 - Oct 31',
+    peak: 'Apr',
+    time: '8 AM - 4 PM',
+    location: 'Flying',
+    spawn: '7.48%',
+    rain: 'No'
+},
+{
+    name: 'purple butterfly',
+    available: 'May 27 - Aug 31',
+    peak: 'Jul - Aug',
+    time: '8 AM - 5 PM',
+    location: 'Flying near trees',
+    spawn: '5.61%',
+    rain: 'Yes'
+},
+{
+    name: 'swallowtail butterfly',
+    available: 'All year',
+    peak: 'All year',
+    time: '8 AM - 5 PM',
+    location: 'Flying near trees (Animal Island)',
+    spawn: '0.93%',
+    rain: 'Yes'
+},
+{
+    name: 'tiger butterfly',
+    available: 'Mar 27 - Sep 30',
+    peak: 'May - Jun',
+    time: '8 AM - 4 PM',
+    location: 'Flying',
+    spawn: '9.35%',
+    rain: 'No'
+},
+{
+    name: 'yellow butterfly',
+    available: 'Feb 24 - Oct 31',
+    peak: 'Apr',
+    time: '8 AM - 4 PM',
+    location: 'Flying',
+    spawn: '7.48%',
+    rain: 'No'
+},
+{
+    name: 'walker cicada',
+    available: 'Jun 26 - Sep 30',
+    peak: 'Aug',
+    time: '8 AM - 4 PM',
+    location: 'On trees',
+    spawn: '7.48%',
+    rain: 'Yes'
+},
+{
+    name: 'ladybug',
+    available: 'Feb 24 - Jul 31',
+    peak: 'Mar',
+    time: '8 AM - 5 PM',
+    location: 'On pansies / On cosmos',
+    spawn: '3.74%',
+    rain: 'No'
+},
+{
+    name: 'spotted ladybug',
+    available: 'Feb 24 - Jul 31',
+    peak: 'Mar',
+    time: '8 AM - 5 PM',
+    location: 'On pansies / On cosmos',
+    spawn: '3.74%',
+    rain: 'No'
+},
+{
+    name: 'drone beetle',
+    available: 'Jun 26 - Aug 31',
+    peak: 'Aug',
+    time: 'All day',
+    location: 'On trees',
+    spawn: '10%',
+    rain: 'Yes'
+},
+{
+    name: 'dynastid beetle',
+    available: 'Jun 26 - Aug 31',
+    peak: 'Jul - Aug',
+    time: '7 PM - 8 AM',
+    location: 'On trees',
+    spawn: '5%',
+    rain: 'Yes'
+},
+{
+    name: 'flat stag beetle',
+    available: 'May 27 - Aug 31',
+    peak: 'Jul - Aug',
+    time: '7 PM - 8 AM',
+    location: 'On trees',
+    spawn: '5%',
+    rain: 'Yes'
+},
+{
+    name: 'giant beetle',
+    available: 'Jun 26 - Aug 31',
+    peak: 'Jul - Aug',
+    time: '11 PM - 8 AM',
+    location: 'On trees',
+    spawn: '1%',
+    rain: 'Yes'
+},
+{
+    name: 'hercules beetle',
+    available: 'All year',
+    peak: 'All year',
+    time: '11 PM - 8 AM',
+    location: 'On trees (Animal Island)',
+    spawn: '1%',
+    rain: 'Yes'
+},
+{
+    name: 'mountain beetle',
+    available: 'Jun 26 - Aug 31',
+    peak: 'Jul - Aug',
+    time: '7 PM - 8 AM',
+    location: 'On trees',
+    spawn: '5%',
+    rain: 'Yes'
+},
+{
+    name: 'saw stag beetle',
+    available: 'Jun 26 - Aug 31',
+    peak: 'Jul - Aug',
+    time: '7 PM - 8 AM',
+    location: 'On trees',
+    spawn: '5%',
+    rain: 'Yes'
+},
+{
+    name: 'coconut crab',
+    available: 'May 27 - Sep 30',
+    peak: 'Jun - Aug',
+    time: '7 PM - 8 AM',
+    location: 'In fruitless coconut trees',
+    spawn: '5%',
+    rain: 'Yes'
+},
